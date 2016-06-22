@@ -15,6 +15,7 @@ jQuery(document).ready(function() {
       for ( i = 0; i < imageUrls.length; i++ ) {
 
          var thumbImgElem = $( "<img/>" )
+            .addClass('thumb')
             .attr( 'id', "thumb" + i )
             .attr( 'src', imageUrls[i] );
 
