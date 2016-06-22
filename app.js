@@ -17,11 +17,23 @@ jQuery(document).ready(function() {
          var thumbImgElem = $( "<img/>" )
             .addClass('thumb')
             .attr( 'id', "thumb" + i )
-            .attr( 'src', imageUrls[i] );
+            .attr( 'src', imageUrls[i] )
+            .data( 'index', i);
+
+          thumbImgElem.bind( 'click', selectPic );
 
          thumbsContainerElem.append( thumbImgElem );
       }
 
+   }
+
+   function selectPic() {
+     var thumbImgElem = $ ( this );
+
+     i = thumbImgElem.data( 'index' );
+
+     $( "img#pic" ).attr( 'src', imageUrls[i] );
+     //console.log( "Select " + thumbImgElem.attr( 'id' ) );
    }
 
    initialize();
